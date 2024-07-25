@@ -1,0 +1,84 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4th project</title>
+</head>
+<body>
+    <h1>Responsible Dashboard layout</h1>
+    <div class="container">
+        <div id="item" class="item1" ><h1>Header</h1></div>
+        <div id="item" class="item2"><h1>navigation bar</h1></div>
+        <div id="item" class="item3">
+            <h1>Main contant</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat earum repellat, reiciendis deserunt facilis amet quisquam asperiores adipisci in quis harum aspernatur maiores eveniet omnis possimus nobis. Laudantium, quidem neque!</p>
+         </div>
+         
+        <div id="item" class="item4"><h1>Aside bar</h1></div>
+        <div id="item" class="item5"><h1>Footer</h1></div>
+    </div>
+</body>
+</html>
+<style>
+    h1{
+        text-align: center;
+    }
+    p{
+        text-align: center;
+    }
+    .container{
+        display: grid;
+        grid-template-columns: repeat(1,4fr);
+        grid-template-rows: 100px 100px 400px 100px;
+        grid-template-areas:  
+        'h h h h'
+        'n n n n'
+        'm m m a'
+        'f f f f';
+        column-gap: 10px;
+        row-gap: 10px;
+        
+    }
+    .item1{
+        grid-area: h;
+        background-color: blue;
+        
+    }
+    .item2{
+        grid-area: n; 
+        background-color: green;
+    
+    }
+    .item3{
+        grid-area: m;
+        background-color: aqua;
+        
+    }
+    .item4{
+        grid-area: a;
+        background-color: gold;
+        
+
+    }
+    .item5{
+        grid-area: f; 
+        background-color: brown;
+    
+    }
+    #item{
+        border-radius: 5px;
+        
+    }
+    @media screen and (max-width:550px) {
+        .container{
+            grid-template-areas: 
+            'h h h h'
+            'n n n n'
+            'm m m m'
+            'a a a a'
+            'f f f f';
+            grid-template-rows: 100px 100px 300px 100px 100px;
+        }
+        
+    }
+</style>
